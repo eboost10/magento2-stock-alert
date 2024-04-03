@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+ /************************************************************
+ * *
+ *  * Copyright © EBoost. All rights reserved.
+ *  * See LICENSE.txt for license details.
+ *  *
+ *  * @author    eboost10@gmail.com
+ * *  @project   Stock Alert
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="eboost_stockalert" frontName="eboost_stockalert">
+            <module name="EBoost_StockAlert" />
+        </route>
+    </router>
+</config>

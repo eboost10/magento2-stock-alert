@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+ /************************************************************
+ * *
+ *  * Copyright © EBoost. All rights reserved.
+ *  * See LICENSE.txt for license details.
+ *  *
+ *  * @author    eboost10@gmail.com
+ * *  @project   Stock Alert
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="EBoost_StockAlert::main"
+             title="Product Alert Stock Notifications" translate="title"
+             module="EBoost_StockAlert"
+             sortOrder="70"
+             resource="EBoost_StockAlert::stock"
+             parent="EBoost_Base::top_level"/>
+
+        <add id="EBoost_StockAlert::grid"
+             title="Stock Notification Subscribers"
+             translate="title"
+             module="EBoost_StockAlert"
+             sortOrder="10"
+             parent="EBoost_StockAlert::main"
+             action="eboost_stockalert/stock/index"
+             dependsOnModule="Magento_ProductAlert"
+             resource="EBoost_StockAlert::stock"/>
+    
+        <add id="EBoost_StockAlert::setting"
+             title="Configuration"
+             translate="title"
+             module="EBoost_StockAlert"
+             sortOrder="20"
+             parent="EBoost_StockAlert::main"
+             action="admin/system_config/edit/section/cataloginventory"
+             dependsOnModule="Magento_ProductAlert"
+             resource="Magento_CatalogInventory::cataloginventory"/>
+    </menu>
+</config>

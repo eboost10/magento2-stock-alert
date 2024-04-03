@@ -1,0 +1,17 @@
+<?php
+/**
+ * @var $block \Magento\ProductAlert\Block\Product\View\Stock
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+?>
+<?php
+$_product = $block->getProduct();
+$_productIds = $_product ? [$_product->getId()]: [];
+
+$stockAlertHelper = $this->helper(\EBoost\StockAlert\Helper\Data::class);
+echo $stockAlertHelper->renderStockStatus([$_product], '.product-info-main', ['itemSelectorPatent' => '.product.alert']);
+?>
+
+    <div class="product alert <?= $block->getHtmlClass() ?>">
+    </div>

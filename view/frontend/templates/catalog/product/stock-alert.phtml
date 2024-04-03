@@ -1,0 +1,29 @@
+<?php
+/**
+ * @var $block \EBoost\StockAlert\Block\Catalog\Product\StockAlert
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+?>
+<?php
+$_productIds = $block->getAllNotifyProducts();
+$_alertHelper = $this->helper('Magento\ProductAlert\Helper\Data');
+$params = [
+    'productIds' => $_productIds,
+    'encodedUrl' => $_alertHelper->getEncodedUrl(),
+    'addStockUrl' => $block->getUrl('productalert/add/stock'),
+    'removeStockUrl' => $block->getUrl('productalert/unsubscribe/stock'),
+    'loadingImage' => $block->getViewFileUrl('images/loader-1.gif')
+];
+$options = $block->getOptions() ?? [];
+$params = array_merge($options, $params);
+?>
+<?php if ($_productIds): ?>
+    <script type="text/javascript">
+        require(['jquery', 'EBoost_StockAlert/js/action/stock-alert'], function ($, notifyStock) {
+            $(function () {
+                notifyStock(<?= json_encode($params) ?>, "<?= $block->getContainerHtmlSelector() ?>");
+            });
+        });
+    </script>
+<?php endif;
