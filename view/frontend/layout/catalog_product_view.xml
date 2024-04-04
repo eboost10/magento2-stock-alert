@@ -8,8 +8,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="alert.urls">
-            <referenceBlock name="productalert.stock" remove="true" />
-            <block class="EBoost\StockAlert\Block\Catalog\Product\View" name="productalert.stock.enhance" />
+            <!-- <referenceBlock name="productalert.stock" remove="true" /> -->
+            <block class="EBoost\StockAlert\Block\Catalog\Product\View" name="productalert.stock.enhance" ifconfig="catalog/productalert/display_notify_stock_button_in_product_page" />
         </referenceContainer>
     </body>
 </page>

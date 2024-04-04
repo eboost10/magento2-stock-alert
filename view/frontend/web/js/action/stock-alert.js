@@ -116,14 +116,14 @@ define(['jquery',
             if (isNotified) {
                 if (!itemCon.is(".mail-box-success")) {
                     let item = $('<div class="mail-box-success">' +
-                        '    <button>' + $t('Un-Notify stock') + '</button>' +
+                        '    <button title="'+ $t('Do not notify me when this product is in stock') +'">' + $t('Un-Notify stock') + '</button>' +
                         '</div>');
                     itemCon.html(item);
                 }
             } else {
                 if (!itemCon.is(".mail-box")) {
                     let item = $('<div class="mail-box">' +
-                        '    <button>' + $t('Notify stock') + '</button>' +
+                        '    <button title="'+ $t('Notify me when this product is in stock') +'">' + $t('Notify stock') + '</button>' +
                         '</div>');
                     itemCon.html(item);
                 }
