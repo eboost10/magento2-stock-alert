@@ -10,8 +10,8 @@ $_product = $block->getProduct();
 $_productIds = $_product ? [$_product->getId()]: [];
 
 $stockAlertHelper = $this->helper(\EBoost\StockAlert\Helper\Data::class);
-echo $stockAlertHelper->renderStockStatus([$_product], '.product-info-main', ['itemSelectorPatent' => '.product.alert']);
+echo $stockAlertHelper->renderStockStatus([$_product], '.product-info-main', ['itemSelectorPatent' => '.product.alert.enhanced']);
 ?>
 
-    <div class="product alert <?= $block->getHtmlClass() ?>">
+    <div class="product alert enhanced <?= $block->getHtmlClass() ?>">
     </div>

@@ -34,7 +34,7 @@
              module="EBoost_StockAlert"
              sortOrder="20"
              parent="EBoost_StockAlert::main"
-             action="admin/system_config/edit/section/cataloginventory"
+             action="admin/system_config/edit/section/catalog/"
              dependsOnModule="Magento_ProductAlert"
              resource="Magento_CatalogInventory::cataloginventory"/>
     </menu>
