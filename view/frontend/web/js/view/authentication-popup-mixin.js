@@ -1,4 +1,4 @@
-define(['jquery', 'EBoost_StockAlert/js/action/login'], function ($, loginAction) {
+define(['jquery', 'EBoost_StockAlert/js/action/login','Magento_Ui/js/modal/modal'], function ($, loginAction, modal) {
     'use strict';
 
     var mixin = {
@@ -19,7 +19,8 @@ define(['jquery', 'EBoost_StockAlert/js/action/login'], function ($, loginAction
             this._modelAlertStockLoginPopup = $(element);
         },
         openAlertStockLoginPopup: function (callBack) {
-            this._modelAlertStockLoginPopup.modal('openModal').trigger('contentUpdated');
+       
+            this._modelAlertStockLoginPopup.modal({type: 'popup',modalClass: 'login-popup'}).modal('openModal').trigger('contentUpdated');
             this._modelAlertStockLoginPopupShowing = callBack;
         },
         closeAlertStockLoginPopup: function () {

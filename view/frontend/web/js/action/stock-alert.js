@@ -26,7 +26,7 @@ define(['jquery',
                 let itemSelector = itemSelectorPatent.replace('{{product_id}}', productId);
                 let itemCon = $(itemSelector, container);
                 if (!itemCon.is(".mail-box-con")) {
-                    itemCon.append('<div class="mail-box-con" data-product_id="' + productId + '">' + '</div>');
+                    itemCon.append('<div class="mail-box-con" style="position: relative;" data-product_id="' + productId + '">' + '</div>');
                 }
             });
             container.on("click.addAlertStock", ".mail-box-con .mail-box", this.addAlertStockEvent.bind(this));
@@ -116,14 +116,14 @@ define(['jquery',
             if (isNotified) {
                 if (!itemCon.is(".mail-box-success")) {
                     let item = $('<div class="mail-box-success">' +
-                        '    <button title="'+ $t('Do not notify me when this product is in stock') +'">' + $t('Un-Notify stock') + '</button>' +
+                        '    <button style="width: 100%;" class="action tocart primary" title="'+ $t('Do not notify me when this product is in stock') +'">' + $t('Un-Notify stock') + '</button>' +
                         '</div>');
                     itemCon.html(item);
                 }
             } else {
                 if (!itemCon.is(".mail-box")) {
                     let item = $('<div class="mail-box">' +
-                        '    <button title="'+ $t('Notify me when this product is in stock') +'">' + $t('Notify stock') + '</button>' +
+                        '    <button style="width: 100%;"  class="action tocart primary" title="'+ $t('Notify me when this product is in stock') +'">' + $t('Notify stock') + '</button>' +
                         '</div>');
                     itemCon.html(item);
                 }
@@ -131,8 +131,8 @@ define(['jquery',
         },
         loading: function (mailBoxCon) {
             mailBoxCon.addClass('_block-content-loading');
-            mailBoxCon.append('<div data-role="loader" class="loading-mask" style="position: absolute;">\n' +
-                '<div class="loader"><img src="' + this.options.loadingImage + '" style="position: absolute;" alt="Loading..."</div>\n' +
+            mailBoxCon.append('<div data-role="loader" class="loading-mask" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 100%;height: 100%;margin: 0;">\n' +
+                '<div class="loader"><img src="' + this.options.loadingImage + '" style="width: 30px; height: 30px; " alt="Loading..."</div>\n' +
                 '</div>');
         },
         removeLoading: function (mailBoxCon) {
@@ -140,6 +140,7 @@ define(['jquery',
             mailBoxCon.removeClass('_block-content-loading');
         },
         addAlertStockEvent: function (event) {
+
             let mailBoxCon = $(event.target).closest(".mail-box-con");
             let _productId = mailBoxCon.data("product_id");
             var self = this;
