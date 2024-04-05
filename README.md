@@ -16,7 +16,7 @@ This simple module allows store admins to view subscribers for out of stock noti
 Require the module
 
 ```bash
-composer eboosttech/magento2-stock-alert
+composer require eboosttech/magento2-stock-alert
 ```
 
 Run setup to install module
