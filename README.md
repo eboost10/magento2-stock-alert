@@ -83,13 +83,13 @@ You can go to `Eboost > Stock Notification Subscribers` to view subscribers for 
 
 ![Stock Alert FE Screenshot](docs/stock-fe-8.png)
 
-4. Add a Name & add code, HTMl, CSS for content ->  click `Save template` button
+4. Add a Name and code, HTMl, CSS for content ->  click `Save template` button
 
 ![Stock Alert FE Screenshot](docs/stock-fe-9.png)
 
-5. Repeate from step 1 to step 4 if you want to create a custom template for `Price Alert`
+5. Repeat from step 1 to step 4 if you want to create a custom template for `Price Alert`
 
-6. Select the new template that you have just created at step2
+6. Select the new template that you have just created above
 
 ![Stock Alert FE Screenshot](docs/stock-fe-7.png)
 
