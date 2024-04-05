@@ -2,13 +2,14 @@
 
 ## Overview
 
-This simple module allows store admins to view subscribers for out of stock notifications and allow add notify stock for product in product list page
+This simple module allows the store admins to view subscribers for out of stock notifications and allows  add a stock notification for products in the product list page
 
 ## Features
-+ Ability to view subscribers for out of stock notifications
-+ Turn on/off notify stock button for product in product list page
-+ Turn on/off notify stock button for product in product detail page
-+ Ability to subscriber/un-subscriber for out of stock notifications on frontend
+
++ View subscribers that registered to receive out of stock notifications
++ Turn on/off the notify stock button for product in product list page
++ Turn on/off the notify stock button for product in product detail page
++ Subscriber/un-subscriber for out of stock notifications on frontend
 + Support Ajax and Login popup
 
 ## Installation
@@ -25,9 +26,16 @@ Run setup to install module
 php bin/magento setup:upgrade
 ```
 
+Run comandline below to deploy
+
+```bash
+php bin/magento setup:static-content:deploy
+```
+
 ## Usage
 
 ### View subscribers for out of stock notifications
+
 You can go to `Eboost > Stock Notification Subscribers` to view subscribers for out of stock notifications
 
 ![Stock Alert Subscribers Menu Screenshot](docs/stock-subscribers-menu.png)
@@ -35,26 +43,45 @@ You can go to `Eboost > Stock Notification Subscribers` to view subscribers for 
 
 ### Show notify button for product list page | product detail page
 
-Go to `Eboost > Configuration` to view setting
+- Go to `Eboost > Configuration` to setup
+
 ![Stock Alert Configuration menu Screenshot](docs/stock-setting-menu.png)
 
-Then go to `Product Alerts` section and expand it
+- Go to `Product Alerts` section and expand it
+
 ![Stock Alert Configuration Section Screenshot](docs/stock-setting-section.png)
 
-Change `Allow Alert When Product Comes Back in Stock` to `Yes` if the values is `No`
-Turn On/Off Notify button for product list page by changing `Display notify stock button in category page` value
-Turn On/Off Notify button for product detail page by changing `Display notify stock button in product detail page` value
+- Change  `Allow Alert When Product Comes Back in Stock`'s value  to turn On/Off the notify button. 
+- Change "Display notify stock button in category page"'s value to turn On/Off the notify button on the category page.
+- Change "Display notify stock button in product detail page"'s value to turn On/Off the notify button on the product page.
+
 ![Stock Alert Configuration Section Screenshot](docs/stock-setting-feature.png)
 
-After update settings, click `Save Config` to save
-Then go to cache page and flush cache
-Go to frontend and check
+- Click `Save Config`
+
+- Go to `Cache Management -> Flush magento cache`
+
+- Go to frontend and check
+
 ![Stock Alert FE Screenshot](docs/stock-fe-1.png)
 ![Stock Alert FE Screenshot](docs/stock-fe-2.png)
 ![Stock Alert FE Screenshot](docs/stock-fe-3.png)
 ![Stock Alert FE Screenshot](docs/stock-fe-4.png)
 ![Stock Alert FE Screenshot](docs/stock-fe-5.png)
 
+### Custom Email templates
+
+1. Go to Marketing -> Email templates -> Add New Template
+
+![Stock Alert FE Screenshot](docs/stock-fe-6.png)
+
+2. Go to Eboost > Configuration -> Catalog-> Product Alerts section
+
+![Stock Alert FE Screenshot](docs/stock-fe-7.png)
+
+3. Select the new template that you have just created at step2
+
+![Stock Alert FE Screenshot](docs/stock-fe-7.png)
 
 ## Bugs/Feature Requests & Contribution
 
