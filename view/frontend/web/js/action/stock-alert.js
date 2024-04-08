@@ -146,7 +146,7 @@ define(['jquery',
             var self = this;
 
             var customer = customerData.get('customer');
-            if (_.isEmpty(customer())) {
+            if (_.isEmpty(customer()) || customer().fullname == undefined ) {
                 this.loginPopup.openAlertStockLoginPopup(function () {
                     self.loginPopup.closeAlertStockLoginPopup();
                     self.addAlertStock(_productId, mailBoxCon);
@@ -161,7 +161,7 @@ define(['jquery',
             var self = this;
 
             var customer = customerData.get('customer');
-            if (_.isEmpty(customer())) {
+            if (_.isEmpty(customer()) || customer().fullname == undefined ) {
                 this.loginPopup.openAlertStockLoginPopup(function () {
                     self.loginPopup.closeAlertStockLoginPopup();
                     self.removeAlertStock(_productId, mailBoxCon);
